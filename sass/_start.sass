@@ -1,0 +1,171 @@
+html
+	@include rem-baseline
+
+body
+	background: #fff
+	color: $text_color
+	+rem(font-size, 14px)
+	line-height: 1.44
+	font-family: $font_main
+
+p
+	margin: 0 0 $content_bot_space 0
+
+ul
+	margin: 0 0 $content_bot_space -20px
+
+ol
+	margin: 0 0 $content_bot_space -20px
+
+ul li,
+ol li
+	margin-bottom: 8px
+
+.list-bullet
+	margin: 0 0 $content_bot_space 0
+	padding: 0
+
+	li 
+		position: relative
+		display: block
+		padding: 0 0 0 18px
+		margin-bottom: 16px
+		list-style-type: none
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 8px
+			left: 0
+			width: 5px
+			height: 5px
+			background: $main_color
+			border-radius: 3px
+
+.list-dash
+	margin: 0 0 $content_bot_space 20px
+	padding: 0
+
+	li 
+		position: relative
+		display: block
+		padding: 0 0 0 18px
+		margin-bottom: 11px
+		list-style-type: none
+		color: $text_color_light
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 11px
+			left: 0
+			width: 13px
+			height: 1px
+			background: $text_color_light
+
+/*  Headers
+/*  -------------------------------------------- */
+
+#{headings(1, 6)}
+	margin: 0 0 12px 0
+	padding: 0
+	font-weight: normal
+	line-height: 1.2
+	@extend %font-sb
+	+rem(font-size, 18px)
+
+#{headings(1, 1)}
+
+#{headings(2, 2)}
+
+#{headings(3, 3)}
+
+#{headings(4, 6)}
+
+.sm-h
+	+rem(font-size, 12px)
+	@extend %font-sb
+
+
+/* Headers
+/* ---------------------------------------END--- */
+
+
+/* fonts
+/* --------------------------------------------- */
+
++font-face( $family: "Open Sans", $file_name_r: "opensans-regular", $file_name_i: "opensans-italic", $file_name_b: "opensans-bold", $file_name_bi: "opensans-bolditalic")
+
++font-face( $family: "Open Sans Semibold", $file_name_r: "opensans-semibold")
++font-face( $family: "Open Sans Light", $file_name_r: "opensans-light")
+
+%font-r
+	font-family: $font_main
+
+.font-r
+	@extend %font-r
+
+%font-sb
+	font-family: 'Open Sans Semibold', $font_main
+
+.font-sb
+	@extend %font-sb
+
+%font-light
+	font-family: 'Open Sans Light', $font_main
+
+.font-light
+	@extend %font-light
+
+
+/* fonts
+/* ---------------------------------------END--- */
+
+
+/* Links
+/* --------------------------------------------- */
+
+a, .u
+	text-decoration: none
+	outline: none !important
+	+link-color ($color: $link_color, $color_hover: $link_color_hover, $color_visited: $link_color_visited, $animation-time: $link_animation-time)
+
+	&:focus
+		outline: thin dotted
+
+.dashed,
+.dotted
+	cursor: pointer
+	border-bottom-width: 1px
+	border-bottom-style: solid
+
+.dashed
+	border-bottom-style: dashed
+
+.dotted
+	border-bottom-style: dotted
+
+/* Links
+/* -------------------------------------END----- */
+
+::-moz-selection
+	background: $selection_bg
+	text-shadow: none
+
+::selection
+	background: $selection_bg
+	text-shadow: none
+
+hr
+	display: block
+	margin: 1em 0
+	padding: 0
+	height: 1px
+	border: 0
+	border-top: 1px solid #ccc
+
+textarea
+	resize: vertical
+

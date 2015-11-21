@@ -1,0 +1,637 @@
+::-webkit-input-placeholder
+	color: $placeholder_color
+	
+
+::-moz-placeholder
+	color: $placeholder_color
+
+input:-ms-input-placeholder
+	color: $placeholder_color
+
+
+%bszbb
+	@include box-sizing(border-box)
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+%center
+	width: $page_w
+	margin: auto
+
+
+/* svg-icons
+/* --------------------------------------------- */
+
+#svg-icons
+	position: absolute
+	top: 0
+	left: 0
+	height: 0
+	width: 0
+	display: none
+	z-index: -100
+
+
+/* svg-icons
+/* ---------------------------------------END--- */
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	&_bg
+		background: $bg_color
+	
+	&_space_bottom
+		padding-bottom: $button_h + 22px
+
+	
+/* page
+/* ---------------------------------------END--- */
+
+
+/* input
+/* --------------------------------------------- */
+
+.input
+	padding: 0 8px
+	border: none
+	border: none
+	font-family: $font_main
+	@extend %bszbb
+	width: 100%
+	background: $color_light
+	+transition-property(border, box-shadow)
+	+transition-duration($animation_time)
+	+rem(font-size, 14px)
+	outline: none
+
+	// &:focus
+	// 	border-color: rgba($main_color, 0.8)
+	// 	outline: 0
+	// 	outline: thin dotted 9
+	// 	+box-shadow(0 0 5px rgba($main_color, 0.8))
+
+input.input
+	height: $input-height
+	line-height: $input-height
+	vertical-align: middle
+
+textarea.input
+	height: 100px
+	padding: 8px
+	vertical-align: top
+
+/* input
+/* ---------------------------------------END--- */
+
+
+/* label
+/* --------------------------------------------- */
+
+.label
+	color: $label_color
+	+rem(font-size, 14px)
+	text-transform: uppercase
+
+/* label
+/* ---------------------------------------END--- */
+
+
+/* form-line
+/* --------------------------------------------- */
+
+.form-line
+	$clear_dim: 70px
+	$clear-icon_dim: 22px
+	padding: 11px $clear_dim  11px $side_space
+	background: $color_light
+	position: relative
+	border-bottom: 1px solid $separator_color
+
+	&__controls
+		margin-left: -8px
+		
+	&__clear
+		width: $clear_dim
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		cursor: pointer
+		color: $clear_color
+		+transition-property(color)
+		+transition-duration($animation_time)
+
+		&:hover,
+		&:active
+			color: $color_dark
+
+	&__clear-icon
+		position: absolute
+		top: 50%
+		margin-top: -($clear-icon_dim/2)
+		left: 50%
+		margin-left: -($clear-icon_dim/2)
+		width: $clear-icon_dim
+		height: $clear-icon_dim
+
+/* form-line
+/* ---------------------------------------END--- */
+
+
+/* header
+/* --------------------------------------------- */
+
+.header
+	//background: #A2A4EC
+	padding: 10px 28px 3px 28px
+	text-align: center
+	position: relative
+	z-index: 1
+
+	&_shadow
+		+box-shadow(0 0 10px rgba(#000, .3))
+	&_color_main
+		background: $main_color
+	
+	&_color_main &__h
+		color: $color_light
+	&__h
+		margin-bottom: 10px
+
+	&__button
+		width: $header-button_dim
+		height: $header-button_dim
+		position: absolute
+		top: 50%
+		margin-top: -($header-button_dim/2)
+		left: 0
+		//background: #61DF79
+
+
+/* header
+/* ---------------------------------------END--- */
+
+
+/* back-button
+/* --------------------------------------------- */
+
+.back-button
+	cursor: pointer
+	
+	&_color_light &__icon
+		color: $color_light
+		&:hover,
+		&:active
+			color: $color_light
+		
+	&__icon
+		cursor: pointer
+		color: $main_color
+		width: $header-button_dim
+		height: $header-button_dim
+		+transition-property(color)
+		+transition-duration($animation_time)
+
+	&__icon,
+	&_color_light &__icon
+		&:hover,
+		&:active
+			color: $color_dark
+
+/* back-button
+/* ---------------------------------------END--- */
+
+
+/* nav-button
+/* --------------------------------------------- */
+
+.nav-button
+	width: $header-button_dim
+	height: $header-button_dim
+	//background: red
+	cursor: pointer
+
+	&__body
+		position: absolute
+		width: 18px
+		height: 14px
+		top: 50%
+		margin-top: -7px
+		left: 50%
+		margin-left: -9px
+		//background: green
+	
+	&_color_light &__i
+		background: $color_light
+	&__i
+		width: 18px
+		height: 2px
+		background: $main_color
+		position: absolute
+		left: 0
+
+		&_top
+			top: 0
+
+		&_middle
+			top: 6px
+
+		&_bottom
+			bottom: 0
+
+
+/* nav-button
+/* ---------------------------------------END--- */
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	$main-nav-icon_dim: 64px
+	@extend %clear
+	margin-bottom: 25px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		width: 50%
+		float: left
+		
+	&__a
+		position: relative
+		display: block
+		background: $main_color
+		padding-top: 38px
+		padding-bottom: 22px
+		+link-color ($color: $color_light, $color_hover: $color_light, $color_visited: none)
+		+transition-property(background, color)
+		+box-shadow(inset -1px -1px 0px #219cf2, inset -2px -2px 0px #1562b6)
+
+		&:hover,
+		&:active
+			
+			background: $color_dark
+
+	&__a:hover &__icon,
+	&__a:active &__icon
+		color: $color_light
+
+	&__icon
+		color: $main_color_light
+		position: relative
+		width: $main-nav-icon_dim
+		height: $main-nav-icon_dim
+		left: 50%
+		margin-left: -($main-nav-icon_dim/2)
+		margin-bottom: 12px
+
+	&__label
+		text-align: center
+		+rem(font-size, 14px)
+		@extend %font-sb
+		text-transform: uppercase
+
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* links
+/* --------------------------------------------- */
+
+.links
+	text-align: center
+	margin-bottom: 10px
+	+rem(font-size, 12px)
+	padding-left: $side_space
+	padding-right: $side_space
+
+/* links
+/* ---------------------------------------END--- */
+
+
+/* hotline
+/* --------------------------------------------- */
+
+.hotline
+	text-align: center
+	padding-left: $side_space
+	padding-right: $side_space
+	margin-bottom: 10px
+		
+
+/* hotline
+/* ---------------------------------------END--- */
+
+
+/* inf-panel
+/* --------------------------------------------- */
+
+.inf-panel
+	padding: 12px $side_space
+	background: $main_color2
+	color: $color_light
+	+rem(font-size, 25px)
+	text-align: center
+
+/* inf-panel
+/* ---------------------------------------END--- */
+
+
+/* fix-footer
+/* --------------------------------------------- */
+
+.fix-footer
+	position: fixed
+	bottom: 0
+	right: 0
+	left: 0
+	display: block
+
+/* fix-footer
+/* ---------------------------------------END--- */
+
+
+/* button
+/* --------------------------------------------- */
+
+.button
+	+rem(font-size, 15px)
+	padding: 0 $side_space
+	color: $color_light
+	text-align: center
+	overflow: visible
+	border: none
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	outline: none
+	text-transform: uppercase
+	white-space: nowrap
+	height: $button_h
+	line-height: $button_h
+	user-select: none
+	background-color: $main_color2
+	@extend %bszbb
+	@extend %font-sb
+	+transition-duration($animation_time)
+	+transition-property(background-color)
+
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+
+	&_w_fluid
+		width: 100%
+
+/* button
+/* ---------------------------------------END--- */
+
+
+/* socials
+/* --------------------------------------------- */
+
+.socials
+	overflow: hidden
+	text-align: center
+	margin-bottom: 10px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: inline-block
+		position: relative
+		
+		&:before,
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			width: $big-width
+			height: 1px
+			background: #ebedef
+
+		&:before
+			right: 100%
+		&:after
+			left: 100%
+		
+	&__i
+		margin: 0
+		padding: 0 6px
+		display: inline-block
+		
+	&__a
+		display: block
+
+	&__icon
+		width: 32px
+		height: 32px
+		+transition-property(color)
+		+transition-duration($animation_time)
+
+		&_vk
+			color: #5c82ab
+			&:hover,
+			&:active
+				color: $color_dark
+		&_fb
+			color: #4862a3
+			&:hover,
+			&:active
+				color: $color_dark
+
+/* socials
+/* ---------------------------------------END--- */
+
+
+/* legend
+/* --------------------------------------------- */
+
+.legend
+	color: $text_color_light
+	+rem(font-size, 8px)
+
+/* legend
+/* ---------------------------------------END--- */
+
+
+/* txt-center
+/* --------------------------------------------- */
+
+.txt-center
+	text-align: center
+
+/* txt-center
+/* ---------------------------------------END--- */
+
+
+/* select
+/* --------------------------------------------- */
+
+.select
+	$select-icon_dim: 10px
+	cursor: pointer
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	display: inline-block
+	@extend %bszbb
+	background: #fff
+	text-align: left
+	min-width: 54px
+	margin-right: 8px
+
+	&_w_smst
+		width: 54px
+
+	&_w_sm
+		width: 63px
+
+	&_w_m
+		width: 72px
+
+	&_w_mm
+		width: 100px
+
+	&_disabled
+		background: #fdfdfd
+
+	&_selected
+		
+
+	&__select
+		position: relative
+		z-index: 10
+		height: $input-height
+		border: 0
+		+opacity(0)
+		width: 100% !important
+	
+	&_selected &__item
+		color: $text_color
+
+	&__item
+		position: absolute
+		top: 0
+		left: 0
+		display: inline-block
+		+rem(font-size, 14px)
+		width: 100%
+
+		span span
+			display: block
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+
+	&_stt_disabled &__item
+		
+	&__bg
+		display: block
+		//background: #F6F6F6
+		padding: 0 18px 0 8px
+		line-height: $input-height
+		height: $input-height
+		@extend %bszbb
+
+	&__arrow
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		width: $input-height
+		
+	&__icon
+		width: $select-icon_dim
+		height: $select-icon_dim
+		position: absolute
+		top: 50%
+		margin-top: -($select-icon_dim/2)
+		left: 50%
+		margin-left: -($select-icon_dim/2)
+		color: $label_color
+
+	&_stt_disabled &__icon
+		
+	&_selected &__icon
+		
+
+/* select
+/* ---------------------------------------END--- */
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	margin-bottom: 20px
+	width: 100%
+	border: 2px solid #e9ecee
+
+	&__h td,
+	& th 
+		font-size: 13px
+		font-weight: bold
+		color: #888
+		background: #e9ecee
+
+	& th,
+	& td
+		padding: 10px 14px
+		border-bottom: 1px solid #e9ecee
+
+	&__line
+		background: #f6f6f6
+
+	
+/* table
+/* ---------------------------------------END--- */
+
+
+

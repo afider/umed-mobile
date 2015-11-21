@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<title>Site name</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/common.css">
+	<script src="js/svg.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.customselect.js"></script>
+	<script src="js/common.js"></script>
+</head>
+
+<body class="page page_bg page_space_bottom">
+	<div id="svg-icons"></div>
+
+	<div class="page__body">
+
+		<header class="page__header header header_color_main">
+			<div class="header__button back-button_color_light">
+				<svg class="back-button__icon">
+					<use xlink:href="#icon_back-arrow"></use>
+				</svg>
+			</div>
+			<h1 class="header__h">Добавить новый полис</h1>
+		</header>
+
+		<form action="#add">
+			
+			<div class="form-line">
+				<label for="add__name" class="form-line__label label">ФИО</label>
+				<div class="form-line__controls">
+					<input type="text" id="add__name" class="form-line__input input" placeholder="Указать">
+				</div>
+				<div class="form-line__clear">
+					<svg class="form-line__clear-icon">
+						<use xlink:href="#icon_cross-round"></use>
+					</svg>
+				</div>
+			</div>
+
+			<div class="form-line">
+				<label for="add__day" class="form-line__label label">Дата рождения</label>
+				<div class="form-line__controls">
+					<select id="add_day" class="select select_w_smst js-select">
+						<option value="0" selected="">ДД</option>
+						<option value="1">01</option>
+						<option value="2">02</option>
+						<option value="3">03</option>
+						<option value="4">04</option>
+						<option value="5">05</option>
+						<option value="6">06</option>
+					</select>
+					<select id="add_month" class="select select_w_m js-select">
+						<option value="0" selected="">ММ</option>
+						<option value="1">Январь</option>
+						<option value="2">Февраль</option>
+						<option value="3">Март</option>
+						<option value="4">Апрель</option>
+						<option value="5">Май</option>
+						<option value="6">Июнь</option>
+						<option value="7">Июль</option>
+						<option value="8">Август</option>
+						<option value="9">Сентябрь</option>
+						<option value="10">Октябрь</option>
+						<option value="11">Ноябврь</option>
+						<option value="12">Декабрь</option>
+					</select>
+					<select id="add_year" class="select select_w_sm js-select">
+						<option value="0" selected="">ГГГГ</option>
+						<option value="1">2015</option>
+						<option value="2">2014</option>
+						<option value="3">2013</option>
+						<option value="4">2012</option>
+						<option value="5">2011</option>
+						<option value="6">2010</option>
+						<option value="7">2009</option>
+						<option value="8">2008</option>
+					</select>
+				</div>
+				<div class="form-line__clear">
+					<svg class="form-line__clear-icon">
+						<use xlink:href="#icon_cross-round"></use>
+					</svg>
+				</div>
+			</div>
+
+			<div class="form-line">
+				<label for="add__polis-num" class="form-line__label label">Единый номер полиса</label>
+				<div class="form-line__controls">
+					<input type="text" id="add__polis-num" class="form-line__input input" placeholder="Указать">
+				</div>
+				<div class="form-line__clear">
+					<svg class="form-line__clear-icon">
+						<use xlink:href="#icon_cross-round"></use>
+					</svg>
+				</div>
+			</div>
+
+			<div class="form-line">
+				<label for="add__polis-num" class="form-line__label label">Пол</label>
+				<div class="form-line__controls">
+					<select id="add_sex" class="select select_w_mm js-select">
+						<option value="1">Мужской</option>
+						<option value="2">Женский</option>
+					</select>
+				</div>
+				<div class="form-line__clear">
+					<svg class="form-line__clear-icon">
+						<use xlink:href="#icon_cross-round"></use>
+					</svg>
+				</div>
+			</div>
+
+			<div class="form-line">
+				<label for="add__blanc-num" class="form-line__label label">Номер бланка</label>
+				<div class="form-line__controls">
+					<input type="text" id="add__blanc-num" class="form-line__input input" placeholder="Указать">
+				</div>
+				<div class="form-line__clear">
+					<svg class="form-line__clear-icon">
+						<use xlink:href="#icon_cross-round"></use>
+					</svg>
+				</div>
+			</div>
+
+			<div class="fix-footer">
+				<input type="submit" class="button button_w_fluid" value="Добавить">
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>
+

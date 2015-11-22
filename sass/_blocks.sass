@@ -72,14 +72,77 @@ input:-ms-input-placeholder
 /* --------------------------------------------- */
 
 .page
-	&_bg
+	&_bg_default
 		background: $bg_color
+
+	&_bg_panel
+		background: $main_color
 	
 	&_space_bottom
-		padding-bottom: $button_h + 22px
+		padding-bottom: $button_h + $side_space
 
 	
 /* page
+/* ---------------------------------------END--- */
+
+
+/* panel
+/* --------------------------------------------- */
+
+.panel
+	position: relative
+	background: $panel_color
+	margin: $side_space $side_space 0 $side_space
+	@extend %clear
+	+box-shadow(0px 0px 7px rgba(#000, .35))
+	padding: 26px 12px
+
+	&_controls
+		padding-bottom: $control-button_dim + $control-button_dim/2
+
+	&_sace_bottom
+		margin-bottom: $side_space
+
+	&__controls
+		position: absolute
+		bottom: 0
+		right: 0
+
+/* panel
+/* ---------------------------------------END--- */
+
+
+/* data-list
+/* --------------------------------------------- */
+
+.data-list
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+	
+	&__i
+		margin: 0 0 12px 0
+		padding: 0
+		
+	&__value
+		background: $color_light
+		padding: 8px
+
+		&_zebra
+			background: linear-gradient(to bottom, #eff1f3 1px, $color_light 1px)
+			background-size: 100% 4px
+
+		&_important
+			font-family: 'Times New Roman', $font_main
+			color: red
+			font-weight: bold
+
+	& &__label
+		margin-top: 5px
+		+rem(font-size, 10px)
+
+/* data-list
 /* ---------------------------------------END--- */
 
 
@@ -126,6 +189,7 @@ textarea.input
 	color: $label_color
 	+rem(font-size, 14px)
 	text-transform: uppercase
+	@extend %font-light
 
 /* label
 /* ---------------------------------------END--- */
@@ -182,6 +246,7 @@ textarea.input
 	text-align: center
 	position: relative
 	z-index: 1
+	background: $color_light
 
 	&_shadow
 		+box-shadow(0 0 10px rgba(#000, .3))
@@ -424,10 +489,83 @@ textarea.input
 	-moz-user-select: none
 	-ms-user-select: none
 
+	&:hover,
+	&:active
+		background: $main_color
+
 	&_w_fluid
 		width: 100%
 
 /* button
+/* ---------------------------------------END--- */
+
+
+/* control-button
+/* --------------------------------------------- */
+
+.control-button
+	$icon_dim: 16px
+	position: relative
+	overflow: visible
+	border: none
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	outline: none
+	width: $control-button_dim
+	height: $control-button_dim
+	line-height: $control-button_dim
+	user-select: none
+	background-color: $color_dark2
+	color: $main_color_light !important
+	@extend %bszbb
+	+transition-duration($animation_time)
+	+transition-property(background-color, color)
+
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+
+	&:hover,
+	&:active
+		background: $color_dark
+		color: $color_light !important
+
+	&_delete
+		background: $color_imp
+		color: $color_light !important
+
+		&:hover,
+		&:active
+			background: $color_imp_hover
+
+	&__icon
+		width: $icon_dim
+		height: $icon_dim
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-top: -($icon_dim/2)
+		margin-left: -($icon_dim/2)
+
+
+
+/* control-button
+/* ---------------------------------------END--- */
+
+
+/* controls
+/* --------------------------------------------- */
+
+.controls
+	@extend %clear
+
+	&__i
+		float: left
+
+/* controls
 /* ---------------------------------------END--- */
 
 

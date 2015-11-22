@@ -539,7 +539,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .sm-h, .font-sb, .main-nav
   font-family: "Open Sans Semibold", "Open Sans", Arial, sans-serif;
 }
 
-.font-light {
+.font-light, .label {
   font-family: "Open Sans Light", "Open Sans", Arial, sans-serif;
 }
 
@@ -636,7 +636,7 @@ input:-ms-input-placeholder {
   color: #000;
 }
 
-.input, .button, .select, .select__bg {
+.input, .button, .control-button, .select, .select__bg {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -644,12 +644,12 @@ input:-ms-input-placeholder {
 
 /* clearfix */
 /* --------------------------------------------- */
-.main-nav:before, .main-nav:after {
+.panel:before, .main-nav:before, .controls:before, .panel:after, .main-nav:after, .controls:after {
   display: table;
   content: "";
   clear: both;
 }
-.main-nav:after {
+.panel:after, .main-nav:after, .controls:after {
   clear: both;
 }
 
@@ -689,14 +689,73 @@ input:-ms-input-placeholder {
 /* ---------------------------------------END--- */
 /* page */
 /* --------------------------------------------- */
-.page_bg {
+.page_bg_default {
   background: #f9f9fa;
 }
+.page_bg_panel {
+  background: #1976d2;
+}
 .page_space_bottom {
-  padding-bottom: 82px;
+  padding-bottom: 80px;
 }
 
 /* page */
+/* ---------------------------------------END--- */
+/* panel */
+/* --------------------------------------------- */
+.panel {
+  position: relative;
+  background: #eef8fd;
+  margin: 20px 20px 0 20px;
+  -moz-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+  padding: 26px 12px;
+}
+.panel_controls {
+  padding-bottom: 60px;
+}
+.panel_sace_bottom {
+  margin-bottom: 20px;
+}
+.panel__controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* panel */
+/* ---------------------------------------END--- */
+/* data-list */
+/* --------------------------------------------- */
+.data-list__lst {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.data-list__i {
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+.data-list__value {
+  background: #fff;
+  padding: 8px;
+}
+.data-list__value_zebra {
+  background: linear-gradient(to bottom, #eff1f3 1px, #ffffff 1px);
+  background-size: 100% 4px;
+}
+.data-list__value_important {
+  font-family: "Times New Roman", "Open Sans", Arial, sans-serif;
+  color: red;
+  font-weight: bold;
+}
+.data-list .data-list__label {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* data-list */
 /* ---------------------------------------END--- */
 /* input */
 /* --------------------------------------------- */
@@ -793,6 +852,7 @@ textarea.input {
   text-align: center;
   position: relative;
   z-index: 1;
+  background: #fff;
 }
 .header_shadow {
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -1034,11 +1094,75 @@ textarea.input {
   -moz-user-select: none;
   -ms-user-select: none;
 }
+.button:hover, .button:active {
+  background: #1976d2;
+}
 .button_w_fluid {
   width: 100%;
 }
 
 /* button */
+/* ---------------------------------------END--- */
+/* control-button */
+/* --------------------------------------------- */
+.control-button {
+  position: relative;
+  overflow: visible;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  user-select: none;
+  background-color: #353e54;
+  color: #25B0F9 !important;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-property: background-color, color;
+  -o-transition-property: background-color, color;
+  -webkit-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.control-button:hover, .control-button:active {
+  background: #121a34;
+  color: #fff !important;
+}
+.control-button_delete {
+  background: #f63c3c;
+  color: #fff !important;
+}
+.control-button_delete:hover, .control-button_delete:active {
+  background: #c30909;
+}
+.control-button__icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+/* control-button */
+/* ---------------------------------------END--- */
+/* controls */
+/* --------------------------------------------- */
+.controls__i {
+  float: left;
+}
+
+/* controls */
 /* ---------------------------------------END--- */
 /* socials */
 /* --------------------------------------------- */

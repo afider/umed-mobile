@@ -135,7 +135,7 @@ input:-ms-input-placeholder
 
 		&_important
 			font-family: 'Times New Roman', $font_main
-			color: red
+			color: $color_imp
 			font-weight: bold
 
 	& &__label
@@ -143,6 +143,105 @@ input:-ms-input-placeholder
 		+rem(font-size, 10px)
 
 /* data-list
+/* ---------------------------------------END--- */
+
+
+/* tabs
+/* --------------------------------------------- */
+
+.tabs
+	@extend %clear
+	padding: $side_space $side_space 0 $side_space
+	background: $color_light
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		display: block
+		width: 50%
+		float: left
+		@extend %bszbb
+
+	&__i:first-child &__a
+		border-radius: 5px 0 0 5px
+		border-right: none
+	&__i:last-child &__a
+		border-radius: 0 5px 5px 0
+
+	& &__a
+		padding: 4px
+		text-align: center
+		display: block
+		border: 1px solid $main_color
+		color: $main_color
+
+	&__i_active &__a
+		color: $color_light
+		background: $main_color
+
+/* tabs
+/* ---------------------------------------END--- */
+
+
+/* teasers
+/* --------------------------------------------- */
+
+.teasers
+	$icon_w: 5px
+	$icon_h: 10px
+	background: $color_light
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		position: relative
+		margin: 0
+		display: block
+
+	& &__a
+		display: block
+		color: $text_color
+		padding: $side_space $side_space+$icon_w*3 $side_space $side_space
+		border-bottom: 1px solid $separator_color
+	
+	&__a:hover &__value,
+	&__a:active &__value
+		color: $main_color
+
+	&__value
+		+rem(font-size, 16px)
+		line-height: 1.3
+		+transition-duration($animation_time)
+		+transition-property(color)
+
+	&__label
+		@extend %font-light
+		color: $label_color
+	
+	&__a:hover &__icon,
+	&__a:active &__icon
+		color: $color_dark
+
+	&__icon
+		position: absolute
+		top: 50%
+		margin-top: -($icon_h/2)
+		right: $side_space
+		width: $icon_w
+		height: $icon_h
+		color: $main_color
+		+transition-duration($animation_time)
+		+transition-property(color)
+
+
+/* teasers
 /* ---------------------------------------END--- */
 
 
@@ -269,6 +368,57 @@ textarea.input
 
 
 /* header
+/* ---------------------------------------END--- */
+
+
+/* sub-header
+/* --------------------------------------------- */
+
+.sub-header
+	position: relative
+	padding: 12px $side_space
+	background: $panel_color
+	border-bottom: 1px solid $panel_color2
+
+	&_control
+		padding-right: 100px
+
+	&__h
+		+rem(font-size, 16px)
+		line-height: 1.3
+
+	& &__control
+		height: $header-button_dim
+		line-height: $header-button_dim
+		//background: #F1EFEF
+		position: absolute
+		top: 50%
+		margin-top: -($header-button_dim/2)
+		right: 0
+		padding-right: $side_space
+		color: $label_color
+		@extend %font-light
+		+rem(font-size, 10px)
+		text-transform: uppercase
+	
+	& &__control:hover,
+	& &__control:hover &__control-icon,
+	& &__control:active,
+	& &__control:active &__control-icon
+		color: $color_dark
+
+	& &__control-icon
+		position: relative
+		margin-left: 8px
+		width: 5px
+		height: 10px
+		vertical-align: middle
+		+transition-duration($animation_time)
+		+transition-property(color)
+		color: $main_color
+		
+
+/* sub-header
 /* ---------------------------------------END--- */
 
 

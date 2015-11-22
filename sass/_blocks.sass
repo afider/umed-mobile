@@ -81,8 +81,37 @@ input:-ms-input-placeholder
 	&_space_bottom
 		padding-bottom: $button_h + $side_space
 
+	&__content
+		padding: $side_space $side_space 0 $side_space
+
 	
 /* page
+/* ---------------------------------------END--- */
+
+
+/* separator
+/* --------------------------------------------- */
+
+.separator
+	display: block
+	margin: 0 0 12px 0
+	padding: 0
+	height: 1px
+	border: none
+	background: $separator_color
+
+
+/* separator
+/* ---------------------------------------END--- */
+
+
+/* line
+/* --------------------------------------------- */
+
+.line
+	margin-bottom: 12px
+
+/* line
 /* ---------------------------------------END--- */
 
 
@@ -318,6 +347,12 @@ textarea.input
 	background: $color_light
 	position: relative
 	border-bottom: 1px solid $separator_color
+
+	&__label
+		&_no
+			color: $color_imp
+		&_yes
+			color: $main_color2
 
 	&__controls
 		margin-left: -8px
@@ -711,7 +746,6 @@ textarea.input
 .inf-panel
 	padding: 12px $side_space
 	background: $main_color2
-	color: $color_light
 	+rem(font-size, 25px)
 	text-align: center
 
@@ -744,6 +778,7 @@ textarea.input
 /* --------------------------------------------- */
 
 .button
+	display: block
 	+rem(font-size, 15px)
 	padding: 0 $side_space
 	color: $color_light
@@ -760,6 +795,7 @@ textarea.input
 	line-height: $button_h
 	user-select: none
 	background-color: $main_color2
+	color: $color_light !important
 	@extend %bszbb
 	@extend %font-sb
 	+transition-duration($animation_time)
@@ -770,7 +806,10 @@ textarea.input
 	-khtml-user-select: none
 	-moz-user-select: none
 	-ms-user-select: none
-
+	
+	&_font_big
+		+rem(font-size, 25px)
+		
 	&_no
 		background: $color_imp
 
@@ -1026,6 +1065,52 @@ textarea.input
 		
 
 /* select
+/* ---------------------------------------END--- */
+
+
+/* schedule
+/* --------------------------------------------- */
+
+.schedule
+	+rem(font-size, 18px)
+	&__i
+		@extend %clear
+		margin-bottom: 12px
+
+	&__days,
+	&__time
+		@extend %bszbb
+		width: 50%
+		float: left
+		padding-right: 15px
+
+	&__days
+		&_right
+			text-align: right
+
+	&__day
+		display: inline-block
+		margin-right: 4px
+		text-transform: uppercase
+
+		&_off
+			color: $color_imp
+
+	&__time-num
+		display: inline-block
+		width: 50px
+		&_right
+			text-align: right
+
+	&__break
+		display: inline-block
+		color: $label_color
+		width: 16px
+		height: 16px
+
+		
+
+/* schedule
 /* ---------------------------------------END--- */
 
 

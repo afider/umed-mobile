@@ -636,7 +636,7 @@ input:-ms-input-placeholder {
   color: #000;
 }
 
-.tabs__i, .input, .button, .control-button, .select, .select__bg {
+.tabs__i, .input, .button, .control-button, .select, .select__bg, .schedule__days, .schedule__time {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -644,12 +644,12 @@ input:-ms-input-placeholder {
 
 /* clearfix */
 /* --------------------------------------------- */
-.panel:before, .tabs:before, .main-nav:before, .fix-footer_inumber_two:before, .controls:before, .panel:after, .tabs:after, .main-nav:after, .fix-footer_inumber_two:after, .controls:after {
+.panel:before, .tabs:before, .main-nav:before, .fix-footer_inumber_two:before, .controls:before, .schedule__i:before, .panel:after, .tabs:after, .main-nav:after, .fix-footer_inumber_two:after, .controls:after, .schedule__i:after {
   display: table;
   content: "";
   clear: both;
 }
-.panel:after, .tabs:after, .main-nav:after, .fix-footer_inumber_two:after, .controls:after {
+.panel:after, .tabs:after, .main-nav:after, .fix-footer_inumber_two:after, .controls:after, .schedule__i:after {
   clear: both;
 }
 
@@ -698,8 +698,32 @@ input:-ms-input-placeholder {
 .page_space_bottom {
   padding-bottom: 80px;
 }
+.page__content {
+  padding: 20px 20px 0 20px;
+}
 
 /* page */
+/* ---------------------------------------END--- */
+/* separator */
+/* --------------------------------------------- */
+.separator {
+  display: block;
+  margin: 0 0 12px 0;
+  padding: 0;
+  height: 1px;
+  border: none;
+  background: #ebedef;
+}
+
+/* separator */
+/* ---------------------------------------END--- */
+/* line */
+/* --------------------------------------------- */
+.line {
+  margin-bottom: 12px;
+}
+
+/* line */
 /* ---------------------------------------END--- */
 /* panel */
 /* --------------------------------------------- */
@@ -923,6 +947,12 @@ textarea.input {
   background: #fff;
   position: relative;
   border-bottom: 1px solid #ebedef;
+}
+.form-line__label_no {
+  color: #f63c3c;
+}
+.form-line__label_yes {
+  color: #01ba65;
 }
 .form-line__controls {
   margin-left: -8px;
@@ -1339,7 +1369,6 @@ textarea.input {
 .inf-panel {
   padding: 12px 20px;
   background: #01ba65;
-  color: #fff;
   font-size: 2.5rem;
   text-align: center;
 }
@@ -1365,6 +1394,7 @@ textarea.input {
 /* button */
 /* --------------------------------------------- */
 .button {
+  display: block;
   font-size: 1.5rem;
   padding: 0 20px;
   color: #fff;
@@ -1381,6 +1411,7 @@ textarea.input {
   line-height: 60px;
   user-select: none;
   background-color: #01ba65;
+  color: #fff !important;
   -moz-transition-duration: 0.4s;
   -o-transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
@@ -1394,6 +1425,9 @@ textarea.input {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+.button_font_big {
+  font-size: 2.5rem;
 }
 .button_no {
   background: #f63c3c;
@@ -1628,6 +1662,46 @@ textarea.input {
 }
 
 /* select */
+/* ---------------------------------------END--- */
+/* schedule */
+/* --------------------------------------------- */
+.schedule {
+  font-size: 1.8rem;
+}
+.schedule__i {
+  margin-bottom: 12px;
+}
+.schedule__days, .schedule__time {
+  width: 50%;
+  float: left;
+  padding-right: 15px;
+}
+.schedule__days_right {
+  text-align: right;
+}
+.schedule__day {
+  display: inline-block;
+  margin-right: 4px;
+  text-transform: uppercase;
+}
+.schedule__day_off {
+  color: #f63c3c;
+}
+.schedule__time-num {
+  display: inline-block;
+  width: 50px;
+}
+.schedule__time-num_right {
+  text-align: right;
+}
+.schedule__break {
+  display: inline-block;
+  color: #8A8F96;
+  width: 16px;
+  height: 16px;
+}
+
+/* schedule */
 /* ---------------------------------------END--- */
 /* table */
 /* --------------------------------------------- */

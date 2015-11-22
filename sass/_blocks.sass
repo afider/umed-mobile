@@ -150,13 +150,24 @@ input:-ms-input-placeholder
 /* --------------------------------------------- */
 
 .tabs
+	position: relative
 	@extend %clear
-	padding: $side_space $side_space 0 $side_space
+	
 	background: $color_light
 
+	&_transparent
+		z-index: 100
+	
+	&_transparent &__lst
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+
 	&__lst
+		display: block
+		padding: $side_space $side_space 0 $side_space
 		margin: 0
-		padding: 0
 		list-style-type: none
 		
 	&__i
@@ -179,6 +190,9 @@ input:-ms-input-placeholder
 		display: block
 		border: 1px solid $main_color
 		color: $main_color
+
+	&_transparent &__a
+		background: rgba($color_light, .5)
 
 	&__i_active &__a
 		color: $color_light
@@ -379,6 +393,7 @@ textarea.input
 	padding: 12px $side_space
 	background: $panel_color
 	border-bottom: 1px solid $panel_color2
+	z-index: 1
 
 	&_control
 		padding-right: 100px

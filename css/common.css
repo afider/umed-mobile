@@ -760,12 +760,22 @@ input:-ms-input-placeholder {
 /* tabs */
 /* --------------------------------------------- */
 .tabs {
-  padding: 20px 20px 0 20px;
+  position: relative;
   background: #fff;
 }
+.tabs_transparent {
+  z-index: 100;
+}
+.tabs_transparent .tabs__lst {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
 .tabs__lst {
+  display: block;
+  padding: 20px 20px 0 20px;
   margin: 0;
-  padding: 0;
   list-style-type: none;
 }
 .tabs__i {
@@ -788,6 +798,9 @@ input:-ms-input-placeholder {
   display: block;
   border: 1px solid #1976d2;
   color: #1976d2;
+}
+.tabs_transparent .tabs__a {
+  background: rgba(255, 255, 255, 0.5);
 }
 .tabs__i_active .tabs__a {
   color: #fff;
@@ -987,6 +1000,7 @@ textarea.input {
   padding: 12px 20px;
   background: #eef8fd;
   border-bottom: 1px solid #cde3f3;
+  z-index: 1;
 }
 .sub-header_control {
   padding-right: 100px;

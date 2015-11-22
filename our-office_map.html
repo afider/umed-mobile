@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<title>Site name</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/common.css">
+	<script src="js/svg.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.customselect.js"></script>
+	<script src="js/common.js"></script>
+</head>
+
+<body class="page page_bg_default">
+	<div id="svg-icons"></div>
+
+	<div class="page_body">
+
+		<header class="page__header header header_color_main">
+			<div class="header__button nav-button nav-button_color_light">
+				<div class="nav-button__body">
+					<div class="nav-button__i nav-button__i_top"></div>
+					<div class="nav-button__i nav-button__i_middle"></div>
+					<div class="nav-button__i nav-button__i_bottom"></div>
+				</div>
+			</div>
+			<h1 class="header__h">Наши офисы</h1>
+		</header>
+
+		<div class="sub-header sub-header_control">
+			<div class="sub-header__h">Ханты-Мансийск</div>
+			<a href="#" class="sub-header__control">
+				изменить
+				<svg class="sub-header__control-icon">
+					<use xlink:href="#icon_right-arrow"></use>
+				</svg>
+			</a>
+		</div>
+
+		<div class="tabs tabs_transparent">
+			<ul class="tabs__lst">
+				<li class="tabs__i">
+					<a href="#" class="tabs__a">Список</a>
+				</li>
+				<li class="tabs__i tabs__i_active">
+					<a href="#" class="tabs__a">Карта</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="map">
+			
+			<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+			<div id="map" style="width: 100%; position: absolute; top: 89px; right: 0; bottom: 0; left: 0;"></div>
+			<script type="text/javascript">
+			    ymaps.ready(init);
+			    var myMap;
+			
+			    function init(){     
+			        myMap = new ymaps.Map ("map", {
+			            center: [60.98705525214961,69.04261749999986],
+			            zoom: 16
+			        }),
+						
+				    myMap.controls
+				        // Кнопка изменения масштаба.
+				    .add('zoomControl', { left: 5, bottom: 5 })
+				        // Список типов карты
+				    .add('typeSelector', { left: 35, bottom: 5 })
+				        // Стандартный набор кнопок
+				    //.add('mapTools', { left: 35, bottom: 5 }),
+						
+					placemark1 = new ymaps.Placemark([60.98705525214961,69.04111749999986], {
+
+						hintContent: '<b>Региональное управление,</b><br>Ханты-Мансийск, ул. Строительная, 23/3'
+					}, 
+					{
+						// Опции.
+						// Своё изображение иконки метки.
+						iconImageHref: 'img/location.svg',
+						// Размеры метки.
+						iconImageSize: [40, 40],
+						// Смещение левого верхнего угла иконки относительно
+						// её "ножки" (точки привязки).
+						//iconImageOffset: [0, 0]
+					});
+
+					placemark2 = new ymaps.Placemark([60.98762524214970,69.04211749999920], {
+
+						hintContent: '<b>Пункт выдачи и замены полисов,</b><br>Ханты-Мансийск, ул. Уютная, 15'
+					}, 
+					{
+						// Опции.
+						// Своё изображение иконки метки.
+						iconImageHref: 'img/location.svg',
+						// Размеры метки.
+						iconImageSize: [40, 40],
+						// Смещение левого верхнего угла иконки относительно
+						// её "ножки" (точки привязки).
+						//iconImageOffset: [0, 0]
+					});
+
+
+					placemark3 = new ymaps.Placemark([60.98602524214970,69.04361749999920], {
+
+						hintContent: 'Я нахожусь тут'
+					}, 
+					{
+						// Опции.
+						// Своё изображение иконки метки.
+						iconImageHref: 'img/my-location.svg',
+						// Размеры метки.
+						iconImageSize: [50, 50],
+						// Смещение левого верхнего угла иконки относительно
+						// её "ножки" (точки привязки).
+						//iconImageOffset: [0, 0]
+					});
+						
+				    // Добавляем все метки на карту.
+				    myMap.geoObjects
+				        .add( placemark1 )
+				        .add( placemark2 )
+				        .add( placemark3 )
+						
+			    }
+			</script><!-- map__body -->
+		</div><!-- map -->
+
+	</div>
+
+</body>
+
+</html>
+

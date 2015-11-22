@@ -1694,6 +1694,9 @@ textarea.input {
 .schedule__time-num_right {
   text-align: right;
 }
+.schedule__time-num_break {
+  color: #8A8F96;
+}
 .schedule__break {
   display: inline-block;
   color: #8A8F96;
